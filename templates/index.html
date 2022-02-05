@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>P&L Calculator</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+	</head>
+
+	<body>
+		<img src="http://www.easy2digital.com/wp-content/uploads/2021/11/lokiuyiui23232-Max-Quality.jpg" width=300 height="250">
+		<br>
+		<div class='container'>
+		<h1>Profit and Loss Calculator</h1>
+
+		<form action="StoreUrl" method="post">
+			{% for message in get_flashed_messages()%}
+				<p>{{message}}</p>
+			{% endfor %}
+		<div class="row">
+			<div class="column">
+			<label>SKU Price(US$)</label>
+			<input type="text" name="name_input">
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="column">
+			<label>Landed Cost</label>
+			<input type="text" name="landed_cost">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+			<label>Fulfillment Cost</label>
+			<input type="text" name="shipping_cost">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+			<label>Payment Processing Rate(floating number)</label>
+			<input type="text" name="payment_cost">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+			<label>Refund Rate(floating number)</label>
+			<input type="text" name="refund_cost">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+			<label>Cost per Sale</label>
+			<input type="text" name="cpa">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+			<label>Discount(floating number)</label>
+			<input type="text" name="discount">
+			</div>
+		</div>
+
+		<div class='row'>
+			<div class='column'>
+				<button type="submit" class='calculate'>Calculate</button>
+			</div>
+		</div>
+
+		</form>
+		</div>
+	</body>
+</html>
